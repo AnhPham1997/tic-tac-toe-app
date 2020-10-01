@@ -1,0 +1,13 @@
+<section class="game-section">
+    <div class="game-container">
+        <h2 class="title-app">Tic Tac Toe Game</h2>
+        <div class="current-player">Current player: {{xIsNext ? 'X' : 'O'}}</div>
+        <div class="winner-result">Winner: {{winner || ''}}</div>
+        <div class="reset-game">
+            <button class="reset-btn" (click)="resetGame()">Reset</button>
+        </div>
+        <section class="board-section">
+            <app-board [board]="board"></app-board>
+        </section>
+    </div>
+</section>
