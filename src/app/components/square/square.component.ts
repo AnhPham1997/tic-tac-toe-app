@@ -7,8 +7,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SquareComponent implements OnInit {
   @Input() value: string = 'X' || 'O';
+  @Input() isInLineWin:boolean;
   @Output() buttonClick:EventEmitter<any> = new EventEmitter<any>();
-  constructor() { }
+  constructor() {
+    this.isInLineWin = false;
+  }
 
   ngOnInit(): void {
   }

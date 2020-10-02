@@ -1,1 +1,5 @@
-<button class="square">{{value}}</button>
+<button class="square" 
+        (click)="onButtonClick()" 
+        [class.square-in-line-win]="isInLineWin">
+        {{value}}
+</button>

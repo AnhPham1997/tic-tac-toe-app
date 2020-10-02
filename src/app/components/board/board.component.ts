@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-board',
@@ -6,10 +6,16 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit {
-  @Input() board;
+  @Input() squares;
+  @Input() lineWin;
+  @Output() squareClick:EventEmitter<number> = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSquareClick(idx:number) {
+    this.squareClick.emit(idx);
   }
 
 }

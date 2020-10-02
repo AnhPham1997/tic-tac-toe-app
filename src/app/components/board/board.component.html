@@ -1,7 +1,7 @@
 <div class="board-container">
-    <div class="row d-flex justify-content-start" *ngFor="let row of board">
-        <div class="cell" *ngFor="let cell of row">
-            <app-square [value]="cell"></app-square>
-        </div>
-    </div>
+    <app-square *ngFor="let square of squares; let idx = index"
+                [value]="square"
+                (buttonClick)="onSquareClick(idx)"
+                [isInLineWin]="lineWin && lineWin.includes(idx)">
+    </app-square>
 </div>
